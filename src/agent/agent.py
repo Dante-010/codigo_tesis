@@ -313,12 +313,13 @@ class Agent:
 
             # Send current statistics to screen
             epochs.set_description(
-                f"* Episode {i_episode+1} " +
-                f"| Mul Reward: {sum(rewards)/len(rewards):.2f}"
-                f"| Avg Reward: {self.episode_reward/self.step:.2f} " +
-                f"| Steps: {self.step} " +
-                f"| Actor Loss: {self.a_loss:.2f} " +
-                f"| Critic Loss: {self.v_loss:.2f}")
+                f"* Episode {i_episode+1:>4} " +
+                f"| Mul Reward: {sum(rewards)/len(rewards):>7.2f} " +
+                f"| Avg Reward: {self.episode_reward/self.step:>7.2f} " +
+                f"| Steps: {self.step:>5} " +
+                f"| Actor Loss: {self.a_loss:>7.2f} " +
+                f"| Critic Loss: {self.v_loss:>7.2f}"
+            )
             mean_avg_reward += self.episode_reward/self.step
             mean_avg_reward_steps += 1
             del rewards
@@ -565,7 +566,7 @@ class Agent:
         # Print Hyperparameters List
         print("*", "-"*18, "Hyperparameters List", "-"*18)
         print("* LR       - Learning Rate:      ", self.lr_list)
-        print("* Episilon - Probability:        ", self.epsilon_probs)
+        print("* Epsilon - Probability:        ", self.epsilon_probs)
         print("* Gamma    - Discount Factor:    ", self.gamma_list)
         print("* Lambda   - Penalty Multiplier: ", self.lambda_metrics)
         print("* Alpha    - Similarity Balancer:", self.alpha_metrics)
@@ -574,7 +575,7 @@ class Agent:
     def print_hyperparams(self):
         print("*", "-"*18, "Model Hyperparameters", "-"*18)
         print("* LR       - Learning Rate:      ", self.lr)
-        print("* Episilon - Probability:        ", self.epsilon_prob)
+        print("* Epsilon - Probability:        ", self.epsilon_prob)
         print("* Gamma    - Discount Factor:    ", self.gamma)
         print("* Lambda   - Penalty Multiplier: ", self.env.lambda_metric)
         print("* Alpha    - Similarity Balancer:", self.env.alpha_metric)

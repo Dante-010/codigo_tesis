@@ -29,11 +29,11 @@ if __name__ == "__main__":
 
     datasets = [
         FilePaths.KAR.value,
-        FilePaths.WORDS.value,
-        FilePaths.VOTE.value,
+        # FilePaths.WORDS.value,
+        # FilePaths.VOTE.value,
         # FilePaths.NETS.value,
-        FilePaths.POW.value,
-        FilePaths.FB_75.value,
+        # FilePaths.POW.value,
+        # FilePaths.FB_75.value,
         # FilePaths.ASTR.value,
     ]
     detection_algs = [
